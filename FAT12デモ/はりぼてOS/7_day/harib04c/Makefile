@@ -51,6 +51,7 @@ haribote.sys : asmhead.bin bootpack.hrb Makefile
 #		imgout:haribote.img
 
 haribote.img : ipl10.bin haribote.sys Makefile
+	gcc -o fat12 fat12.c
 	./fat12 haribote.img haribote.sys ipl10.bin
 
 %.gas : %.c Makefile
